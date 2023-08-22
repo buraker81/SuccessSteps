@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Roboto+Mono:ital,wght@1,100&display=swap');
+
+:root{
+    --line-border-fill: #27374D;
+    --line-border-empty: #9DB2BF;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Roboto Mono,sans-serif;
+    background-color: #DDE6ED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0px;
+    overflow: hidden;
+}
+.container{
+    text-align: center;
+}
+.progress-container{
+    display: flex;
+    justify-content:space-between;
+    position: relative;
+    margin-bottom: 30px;
+    width: 350px;
+    max-width: 100%;
+}
+.progress-container::before{
+    content: '';
+    background-color: var(--line-border-empty);
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: 0.4s ease;
+}
+.progress-line{
+    background-color: var(--line-border-fill);
+    height: 4px;
+    width: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: 0.4s ease;
+}
+.circle{
+    color: #fff;
+    background-color:#DDE6ED;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--line-border-empty);
+}
+.circle.active{
+    background-color: #27374D; 
+    border: 3px solid var(--line-border-fill);
+}
+.btn{
+    background-color: var(--line-border-fill);
+    color: white;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 8px 24px;
+    margin: 5px;
+}
+.btn:active{
+    transform: scale(0.95);
+}
+.btn:focus{
+    outline: 0;
+}
+.btn:disabled{
+    background-color: var(--line-border-empty);
+}
+
+
